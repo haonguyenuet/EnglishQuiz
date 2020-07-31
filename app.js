@@ -67,11 +67,11 @@ function resetState() {
 function selectAnswer(event) {
     // Xác định đáp án (button) nào được click
     const selectButton = event.target; // Xác định Node nào được click khi 'click' event diễn ra
-    
+    selectButton.classList.add('selected')
     if (selectButton.dataset.correct) {
         point++;
         pointElement.innerHTML = point;
-        selectButton.classList.add('selected')
+        selectButton.classList.remove('selected')
     }
 
     Array.from(ansButton.children).forEach(button => {
@@ -139,8 +139,8 @@ const questions = [
         answers: [
             { text: 'A. Participate in/ Take part in', correct: false },
             { text: 'B. To delight in sth ', correct: false },
-            { text: 'C. To employ in sth', correct: false },
-            { text: 'D. Invest in', correct: true}
+            { text: 'C. To employ in sth', correct: true},
+            { text: 'D. Invest in', correct: false}
         ]
     },
     {
